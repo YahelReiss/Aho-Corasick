@@ -9,6 +9,7 @@ class Trie:
         self.root: Node = Node("")
         self.root.failure_link = {char: self.root for char in alphabet}
         self.root.failure_link[""] = self.root
+        self.root.suffix_link = self.root
         self.root.to_print.append("")
         self.root.transitions[""] = self.root
 
