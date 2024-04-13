@@ -1,6 +1,7 @@
 class Node:
     def __init__(self, val):
         self.val = val
+        self.state = None
         self.transitions = {}
         self.is_terminal = False
         self.to_print = []
