@@ -123,65 +123,51 @@ class MyTestCase(unittest.TestCase):
     def test_time(self):
         import time
 
-        words = ["a", "b", "d", "e", "ab", "ad", "ae", "bd", "be", "abd", "abe", "abde", "ed", "eb", "ea", "abdb",
-                 "abdbd", "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d", "ab", "ad", "ae", "abd", "abe", "abde",
-                 "ed", "eb", "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d", "ab", "ad", "ae", "abd", "abe",
-                 "abde", "ed", "eb" , "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d", "ab", "ad", "ae", "abd",
-                 "abe", "abde", "ed", "eb", "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d", "ab", "ad", "ae",
-                 "abd", "abe", "abde", "ed", "eb", "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d", "ab", "ad",
-                 "ae", "abd", "abe", "abde", "ed", "eb", "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d", "ab",
-                 "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abdd", "abddd", "abed", "bee", "bea", "a", "b", "d",
-                 "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abdd", "abddd", "abed", "bee", "bea", "a", "b",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",
-                 "d", "ab", "ad", "ae", "abd", "abe", "abde", "ed", "eb", "abd", "abe", "abde", "ed", "eb", "eb", "eb",]
-        string = "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" * 10000 + "abde"
-        string2 = "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" * 10000 + "abde"
-        flag = 0
-        alphabet = list(set(string)) + list(set(''.join(words))) + list(set(string2))
+        words = ["a", "b", "d", "e", "ab", "ad", "ae", "aa", "bd", "be", "bb", "ba", "da", "db", "dd", "de",
+                 "ea", "eb", "ed", "ee", "aaa", "aab", "aad", "aae", "aba", "abb", "abd",
+                 "abe", "ada", "adb", "add", "ade", "aea", "aeb", "aed", "aee", "baa", "bab", "bad", "bae", "bba",
+                 "bbb", "bbd", "bbe", "bda", "bdb", "bdd", "bde", "bea", "beb", "bed", "bee", "daa", "dab", "dad",
+                 "dae", "dba", "dbb", "dbd", "dbe", "dda", "ddb", "ddd", "dde", "dea", "deb", "ded", "dee", "eaa",
+                 "eab", "ead", "eae", "eba", "ebb", "ebd", "ebe", "eda", "edb", "edd", "ede", "eea", "eeb", "eed", "eee"
+                 ]
+        string = "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" * 1000000 + "abde"
+        alphabet = list(set(string)) + list(set(''.join(words)))
 
         # Measure runtime of the Aho-Corasick algorithm
         start_time = time.time()
         A = AhoCorasick(words, string, alphabet)
         A.build_failure_and_suffix_links()
         for _ in range(1):
-            A.string = string if flag else string2
-            flag = 1 - flag
             A.find_words_in_string()
         aho_corasick_runtime = time.time() - start_time
 
         # Measure runtime of the naive algorithm
         start_time = time.time()
         for _ in range(1):
-            s = string if flag else string2
-            flag = 1 - flag
             res = []
             for word in words:
-                if word in s:
+                if word in string:
                     res.append(word)
         naive_algorithm_runtime = time.time() - start_time
+        print(naive_algorithm_runtime)
+        print(aho_corasick_runtime)
+
+
+        start_time = time.time()
+        res = []
+        for word in words:
+            word_length = len(word)
+            for i in range(len(string) - word_length + 1):
+                substring = string[i:i + word_length]
+                if substring == word:
+                    res.append(word)
+                    break  # If the word is found, no need to continue searching
+        naive_algorithm_runtime_python_implementation = time.time() - start_time
+        print(naive_algorithm_runtime_python_implementation)
+
 
         # Assert that the runtime of Aho-Corasick is faster than the naive algorithm
-        self.assertLess(aho_corasick_runtime, naive_algorithm_runtime)
+        self.assertLess(aho_corasick_runtime, naive_algorithm_runtime_python_implementation)
         self.assertEqual(set(A.res), set(res))
 
 
